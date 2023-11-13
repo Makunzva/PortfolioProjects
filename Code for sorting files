@@ -1,0 +1,28 @@
+#Code for Sorting/Grouping files 
+
+
+import os, shutil
+
+path = r"C:/Users/Admin/Downloads/"
+
+file_name= os.listdir(path)
+
+os.listdir(path)
+
+folder_names = ['pdf files', 'csv files','exe files','jpg files', 'docx files']
+
+for loop in range(0,4):
+    if not os.path.exists(path + folder_names[loop]):
+        print(path + folder_names[loop])
+        os.makedirs(path + folder_names[loop])
+        
+        
+for file in file_name:
+    if ".pdf" in file and not os.path.exists(path + "pdf files/" + file):
+        shutil.move(path + file, path + "pdf files/" + file)
+    elif ".csv" in file and not os.path.exists(path + "csv files/" + file):
+        shutil.move(path + file, path + "csv files/" + file)
+    elif ".exe" in file and not os.path.exists(path + "exe files/" + file):
+        shutil.move(path + file, path + "exe files/" + file)
+    elif ".jpg" in file and not os.path.exists(path + "jpg files/" + file):
+        shutil.move(path + file, path + "jpg files/" + file)
