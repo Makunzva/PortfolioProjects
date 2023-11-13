@@ -1,0 +1,21 @@
+name = input("What is your name?: ")
+print(name)
+weight = int(input("What is your weight in pounds?:"))
+print(weight)
+height = int(input("What is your height in inches?:"))
+print(height)
+BMI = (weight * 703) / (height * height)
+print(BMI)
+if BMI>0:
+    if (BMI < 18.5):
+        print(name + ' you are underweight')
+    elif (BMI < 24.9):
+        print(name + ' you are normal weight')
+    elif (BMI < 34.9):
+        print(name + ' you are obese')
+    elif (BMI < 39.9):
+        print(name + ' you are severely obese')
+    elif (BMI > 40):
+        print(name + ' you are morbidly obese')
+else:
+    print('Please enter valid input')
