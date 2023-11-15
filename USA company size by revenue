@@ -1,0 +1,26 @@
+# python code for webscripting on wikipedia
+
+world_titles = table.find_all('th')
+
+world_table_titles = [title.text.strip() for title in world_titles]
+
+print(world_table_titles)
+
+import pandas as pd
+
+df = pd.DataFrame(columns = world_table_titles)
+
+df
+
+column_data = table.find_all('tr')
+
+for row in column_data[1:]:
+    row_data = row.find_all('td')
+    individual_row_data = [title.text.strip() for title in row_data]
+    
+    length = len(df)
+    df.loc[length] = individual_row_data
+    
+df
+
+df.to_csv(r'C:\Users\Admin\Downloads\Web project\USACompanies.csv', index = False)
